@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9959570E-D0A6-4E30-B963-9A1A4083AC13}"
 EndProject
@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipeBook.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipeBook.Communication", "src\Shared\MyRecipeBook.Communication\MyRecipeBook.Communication.csproj", "{7AF1CD5C-2FAC-41A5-9BC4-5E9C9487B676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipeBook.Exceptions", "MyRecipeBook.Exceptions\MyRecipeBook.Exceptions.csproj", "{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipeBook.Exceptions", "src\Shared\MyRecipeBook.Exceptions\MyRecipeBook.Exceptions.csproj", "{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +51,10 @@ Global
 		{7AF1CD5C-2FAC-41A5-9BC4-5E9C9487B676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF1CD5C-2FAC-41A5-9BC4-5E9C9487B676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF1CD5C-2FAC-41A5-9BC4-5E9C9487B676}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +68,6 @@ Global
 		{F13115C9-72D4-4C9A-952A-F469CA0146CA} = {3E0FEBDC-8275-4BD2-803A-7219AE9621BF}
 		{2317BA40-5366-4E14-88F9-EF3BB4924C42} = {3E0FEBDC-8275-4BD2-803A-7219AE9621BF}
 		{7AF1CD5C-2FAC-41A5-9BC4-5E9C9487B676} = {D070E98D-2251-44DE-970B-7CC76DB5ADD6}
-		{BF0C1867-8891-4CF7-9AE6-8BA7FE959FEB} = {D070E98D-2251-44DE-970B-7CC76DB5ADD6}
+		{F5A892C4-35F4-40E3-8F9E-520F0E4ADB4F} = {D070E98D-2251-44DE-970B-7CC76DB5ADD6}
 	EndGlobalSection
 EndGlobal
