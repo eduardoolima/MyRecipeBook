@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Email_Empty" xml:space="preserve">
+    <value>Lo enderecito de emailito non puede ser vaziito pendejo!</value>
+  </data>
   <data name="Email_Invalid" xml:space="preserve">
     <value>Lo enderecito é invalidito cabron, ai ai ai</value>
   </data>
   <data name="Name_Empty" xml:space="preserve">
     <value>lo nombre non puede ser vaziito, ai ai ai papi pendejo, cabron</value>
+  </data>
+  <data name="ShortPassword" xml:space="preserve">
+    <value>La contraseñita debe tener al menozitos 6 caracteresitos cabron, ai ai ai</value>
+  </data>
+  <data name="Unknown_Error" xml:space="preserve">
+    <value>Errito desconhecidito ai ai ai caramba pendejo</value>
   </data>
 </root>

@@ -61,6 +61,15 @@ namespace MyRecipeBook.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Te email address cannot be empty.
+        /// </summary>
+        public static string Email_Empty {
+            get {
+                return ResourceManager.GetString("Email_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The email address is invalid.
         /// </summary>
         public static string Email_Invalid {
@@ -75,6 +84,24 @@ namespace MyRecipeBook.Exceptions {
         public static string Name_Empty {
             get {
                 return ResourceManager.GetString("Name_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The password must be at least 6 characters long.
+        /// </summary>
+        public static string ShortPassword {
+            get {
+                return ResourceManager.GetString("ShortPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown Error.
+        /// </summary>
+        public static string Unknown_Error {
+            get {
+                return ResourceManager.GetString("Unknown_Error", resourceCulture);
             }
         }
     }
