@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailAlreadyRegistered" xml:space="preserve">
+    <value>Emailito já registradito ai ai ai</value>
+  </data>
   <data name="Email_Empty" xml:space="preserve">
     <value>Lo enderecito de emailito non puede ser vaziito pendejo!</value>
   </data>

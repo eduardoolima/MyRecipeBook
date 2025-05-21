@@ -5,7 +5,7 @@ namespace MyRecipeBook.Infrastructure.DataAccess
 {
     public class MyRecipeBookDbContext : DbContext
     {
-        protected MyRecipeBookDbContext(DbContextOptions options) : base(options)
+        public MyRecipeBookDbContext(DbContextOptions options) : base(options)
         {
 
         }
