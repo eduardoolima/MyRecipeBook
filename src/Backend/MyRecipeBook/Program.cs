@@ -3,6 +3,8 @@ using MyRecipeBook.Middleware;
 using MyRecipeBook.Application;
 using MyRecipeBook.Infrastructure;
 using MyRecipeBook.Application.UseCases.User.Register;
+using MyRecipeBook.Infrastructure.Migrations;
+using MyRecipeBook.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,4 +53,12 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+MigrateDatabase();
+
 app.Run();
+
+void MigrateDatabase()
+{
+    var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+    DatabaseMigration.Migrate(builder.Configuration.ConnectionString(), serviceScope.ServiceProvider);
+}

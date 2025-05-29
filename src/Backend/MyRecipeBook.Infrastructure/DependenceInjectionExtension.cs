@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentMigrator.Runner;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyRecipeBook.Domain.Repositories;
 using MyRecipeBook.Domain.Repositories.User;
 using MyRecipeBook.Infrastructure.DataAccess;
 using MyRecipeBook.Infrastructure.DataAccess.Repositories;
+using MyRecipeBook.Infrastructure.Extensions;
+using System.Reflection;
 
 namespace MyRecipeBook.Infrastructure
 {
@@ -12,7 +15,9 @@ namespace MyRecipeBook.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            AddDbContext(services, configuration.GetConnectionString("Connection")!);
+            string connectionString = configuration.ConnectionString();
+            AddDbContext(services, connectionString);
+            AddFluentMigrator(services, connectionString);
             AddRepositories(services);            
         }
 
@@ -29,6 +34,15 @@ namespace MyRecipeBook.Infrastructure
             services.AddScoped<IUnityOfWork, UnityOfWork>();
             services.AddScoped<IUserWriteOnlyRepository, UserRepository>();
             services.AddScoped<IUserReadOnlyRepository, UserRepository>();
+        }
+
+        static void AddFluentMigrator(IServiceCollection services, string connectionString)
+        {
+            services.AddFluentMigratorCore()
+                .ConfigureRunner(options => options
+                    .AddMySql5()
+                    .WithGlobalConnectionString(connectionString)
+                    .ScanIn(Assembly.Load("MyRecipeBook.Infrastructure")).For.All());
         }
     }
 }
