@@ -31,7 +31,7 @@ namespace MyRecipeBook.Infrastructure
 
         static void AddRepositories(IServiceCollection services)
         {
-            services.AddScoped<IUnityOfWork, UnityOfWork>();
+            services.AddScoped<IUnitOfWork, UnityOfWork>();
             services.AddScoped<IUserWriteOnlyRepository, UserRepository>();
             services.AddScoped<IUserReadOnlyRepository, UserRepository>();
         }
