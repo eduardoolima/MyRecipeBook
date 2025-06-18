@@ -59,6 +59,14 @@ app.Run();
 
 void MigrateDatabase()
 {
+    if(builder.Configuration.IsUnitTestEnvironment())
+        return;
     var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
     DatabaseMigration.Migrate(builder.Configuration.ConnectionString(), serviceScope.ServiceProvider);
+}
+
+public partial class Program
+{
+    // This partial class is used to allow for the Program class to be extended in other files.
+    // This is useful for testing purposes or when you want to separate concerns in your application.
 }
