@@ -20,7 +20,7 @@ namespace MyRecipeBook.Filters
                 ThrowUnknowException(context);
             }
         }
-        void HandleProjectException(ExceptionContext context)
+        static void HandleProjectException(ExceptionContext context)
         {
             if (context.Exception is ErrorOnValidationException)
             {
@@ -30,7 +30,7 @@ namespace MyRecipeBook.Filters
                 context.Result = new BadRequestObjectResult(new ResponseErrorJson(exception.ErrorMessages));
             }
         }
-        void ThrowUnknowException(ExceptionContext context)
+        static void ThrowUnknowException(ExceptionContext context)
         {
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             context.Result = new ObjectResult(new ResponseErrorJson(ResourceMessagesException.Unknown_Error));
