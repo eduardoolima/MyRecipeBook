@@ -14,7 +14,7 @@ namespace MyRecipeBook.Controllers
         public async Task<IActionResult> Register([FromBody]RequestRegisterUserJson request, [FromServices]IRegisterUserUseCase useCase)
         {            
             var result = await useCase.Execute(request);
-            return Created(string.Empty, result);
+            return Created(string.Empty, result);//comentario teste
         }
     }
 }
