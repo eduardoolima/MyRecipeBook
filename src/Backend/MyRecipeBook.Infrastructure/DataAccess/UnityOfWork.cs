@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyRecipeBook.Infrastructure.DataAccess
 {
-    public class UnityOfWork : IUnityOfWork
+    public class UnityOfWork : IUnitOfWork
     {
         readonly MyRecipeBookDbContext _dbContext;
 

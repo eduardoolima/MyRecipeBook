@@ -14,7 +14,7 @@ namespace MyRecipeBook.Application.UseCases.User.Register
     {
         readonly IUserWriteOnlyRepository _writeOnlyRepository;
         readonly IUserReadOnlyRepository _readOnlyRepository;
-        readonly IUnityOfWork _unityOfWork;
+        readonly IUnitOfWork _unitOfWork;
         readonly IMapper _mapper;
         readonly PasswordEncripter _passwordEncripter;
 
@@ -22,14 +22,14 @@ namespace MyRecipeBook.Application.UseCases.User.Register
         (
             IUserWriteOnlyRepository writeOnlyRepository,
             IUserReadOnlyRepository readOnlyRepository,
-            IUnityOfWork unityOfWork,
+            IUnitOfWork unitOfWork,
             IMapper mapper,
             PasswordEncripter passwordEncripter
         )
         {
             _writeOnlyRepository = writeOnlyRepository;
             _readOnlyRepository = readOnlyRepository;
-            _unityOfWork = unityOfWork;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
             _passwordEncripter = passwordEncripter;
         }
@@ -42,11 +42,11 @@ namespace MyRecipeBook.Application.UseCases.User.Register
             user.Password = _passwordEncripter.Encrypt(request.Password);
 
             await _writeOnlyRepository.Add(user);
-            await _unityOfWork.Commit();
+            await _unitOfWork.Commit();
 
             return new ResponseRegisteredUserJson
             {
-                Name = request.Name,
+                Name = user.Name,
             };
         }
 
