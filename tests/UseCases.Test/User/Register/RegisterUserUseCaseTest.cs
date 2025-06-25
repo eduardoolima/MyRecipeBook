@@ -12,7 +12,7 @@ namespace UseCases.Test.User.Register
 {
     public class RegisterUserUseCaseTest
     {
-        RegisterUserUseCase CreateUseCase(string? email = null)
+        static RegisterUserUseCase CreateUseCase(string? email = null)
         {
             var userReadOnlyRepositoryBuilder = new UserReadOnlyRepositoryBuilder();
             if (!string.IsNullOrEmpty(email))

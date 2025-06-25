@@ -38,20 +38,20 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
-{
-    try
-    {
-        var test = scope.ServiceProvider.GetRequiredService<IRegisterUserUseCase>();
-        Console.WriteLine("Serviço resolvido com sucesso!");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Erro ao resolver serviço:");
-        Console.WriteLine(ex);
-        throw; // dispara a exceção para stacktrace completo
-    }
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    try
+//    {
+//        var test = scope.ServiceProvider.GetRequiredService<IRegisterUserUseCase>();
+//        Console.WriteLine("Serviço resolvido com sucesso!");
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine("Erro ao resolver serviço:");
+//        Console.WriteLine(ex);
+//        throw; // dispara a exceção para stacktrace completo
+//    }
+//}
 
 MigrateDatabase();
 
@@ -67,6 +67,7 @@ void MigrateDatabase()
 
 public partial class Program
 {
+    protected Program() { }
     // This partial class is used to allow for the Program class to be extended in other files.
     // This is useful for testing purposes or when you want to separate concerns in your application.
 }
