@@ -16,7 +16,7 @@ namespace MyRecipeBook.Middleware
             var requestedCulture = context.Request.Headers.AcceptLanguage.FirstOrDefault();
 
             var cultureInfo = new CultureInfo("pt-BR");
-            if (!string.IsNullOrEmpty(requestedCulture) && supportedLanguages.Any(c => c.Name.Equals(requestedCulture))) 
+            if (!string.IsNullOrWhiteSpace(requestedCulture) && supportedLanguages.Any(c => c.Name.Equals(requestedCulture))) 
             {
                 cultureInfo = new CultureInfo(requestedCulture);
             }

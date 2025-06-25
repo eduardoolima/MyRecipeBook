@@ -38,20 +38,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    try
-//    {
-//        var test = scope.ServiceProvider.GetRequiredService<IRegisterUserUseCase>();
-//        Console.WriteLine("Serviço resolvido com sucesso!");
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine("Erro ao resolver serviço:");
-//        Console.WriteLine(ex);
-//        throw; // dispara a exceção para stacktrace completo
-//    }
-//}
 
 MigrateDatabase();
 
