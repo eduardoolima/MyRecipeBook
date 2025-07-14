@@ -79,6 +79,15 @@ namespace MyRecipeBook.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid E-mail or Password.
+        /// </summary>
+        public static string Email_or_Password_Invalid {
+            get {
+                return ResourceManager.GetString("Email_or_Password_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Email already registered.
         /// </summary>
         public static string EmailAlreadyRegistered {
