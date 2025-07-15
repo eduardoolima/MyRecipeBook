@@ -8,6 +8,7 @@ namespace MyRecipeBook.Infrastructure.Migrations.Versions
         public override void Up()
         {
             CreateTable("Users")
+                .WithColumn("UserId").AsGuid().NotNullable()
                 .WithColumn("Name").AsString(128).NotNullable()
                 .WithColumn("Email").AsString(255).NotNullable()
                 .WithColumn("Password").AsString(2000).NotNullable();
