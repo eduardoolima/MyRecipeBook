@@ -18,13 +18,13 @@ namespace MyRecipeBook.Infrastructure
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             AddRepositories(services);
+            AddTokens(services, configuration);
 
             if (configuration.IsUnitTestEnvironment())
                 return;
             string connectionString = configuration.ConnectionString();
             AddDbContext(services, connectionString);
-            AddFluentMigrator(services, connectionString);      
-            AddTokens(services, configuration);
+            AddFluentMigrator(services, connectionString);                  
         }
 
         static void AddDbContext(IServiceCollection services, string connectionString)
