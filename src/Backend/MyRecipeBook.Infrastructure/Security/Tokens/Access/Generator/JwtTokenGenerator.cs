@@ -11,10 +11,10 @@ namespace MyRecipeBook.Infrastructure.Security.Tokens.Access.Generator
         readonly uint _expirationInMinutes;
         readonly string _signingtKey;
 
-        public JwtTokenGenerator(uint tokenExpirationInMinutes, string signingtKey)
+        public JwtTokenGenerator(uint tokenExpirationInMinutes, string signingKey)
         {
             _expirationInMinutes = tokenExpirationInMinutes;
-            _signingtKey = signingtKey;
+            _signingtKey = signingKey;
         }
 
         public string Generate(Guid userIdentifier)

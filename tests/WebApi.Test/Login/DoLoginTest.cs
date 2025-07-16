@@ -2,15 +2,9 @@
 using FluentAssertions;
 using MyRecipeBook.Communication.Requests;
 using MyRecipeBook.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net;
-using System.Net.Http.Json;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using WebApi.Test.InlineData;
 
 namespace WebApi.Test.Login
@@ -41,13 +35,14 @@ namespace WebApi.Test.Login
 
             var response = await DoPost(method, request);
 
-            response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
 
             await using var responseBody = await response.Content.ReadAsStreamAsync();
 
             var responseData = await JsonDocument.ParseAsync(responseBody);
 
             responseData.RootElement.GetProperty("name").GetString().Should().Be(_name).And.NotBeNullOrWhiteSpace();
+            responseData.RootElement.GetProperty("tokens").GetProperty("accessToken").GetString().Should().NotBeNullOrEmpty().And.NotBeNullOrWhiteSpace();
         }
 
         [Theory]

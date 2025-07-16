@@ -2,6 +2,7 @@
 using CommomTestUtilities.Entities;
 using CommomTestUtilities.Repositories;
 using CommomTestUtilities.Requests;
+using CommomTestUtilities.Tokens;
 using FluentAssertions;
 using MyRecipeBook.Application.UseCases.Login.DoLogin;
 using MyRecipeBook.Communication.Requests;
@@ -25,7 +26,9 @@ namespace UseCases.Test.DoLogin
             });
 
             result.Should().NotBeNull();
+            result.Tokens.Should().NotBeNull();
             result.Name.Should().NotBeNullOrEmpty().And.NotBeNullOrWhiteSpace().And.Be(user.Name);
+            result.Tokens.AccessToken.Should().NotBeNullOrEmpty().And.NotBeNullOrWhiteSpace();
         }
 
         [Fact]
@@ -49,7 +52,7 @@ namespace UseCases.Test.DoLogin
             if(user is not null)
                 userReadOnlyRepositoryBuilder.GetByEmainAndPassword(user);
 
-            return new DoLoginUseCase(userReadOnlyRepositoryBuilder.Build(), PasswordEncripterBuilder.Build());
+            return new DoLoginUseCase(userReadOnlyRepositoryBuilder.Build(), PasswordEncripterBuilder.Build(), JwtTokenGeneratorBuilder.Build());
         }
 
     }

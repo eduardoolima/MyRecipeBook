@@ -2,6 +2,7 @@
 using CommomTestUtilities.Mapper;
 using CommomTestUtilities.Repositories;
 using CommomTestUtilities.Requests;
+using CommomTestUtilities.Tokens;
 using FluentAssertions;
 using MyRecipeBook.Application.UseCases.User.Register;
 using MyRecipeBook.Domain.Repositories;
@@ -19,7 +20,8 @@ namespace UseCases.Test.User.Register
                 userReadOnlyRepositoryBuilder.ExistActiveUserWithEmail(email, true);
             return new RegisterUserUseCase(
                 UserWriteOnlyRepositoryBuilder.Build(), userReadOnlyRepositoryBuilder.Build(),
-                UnitOfWorkBuilder.Build(), MapperBuilder.Build(), PasswordEncripterBuilder.Build()
+                UnitOfWorkBuilder.Build(), MapperBuilder.Build(), PasswordEncripterBuilder.Build(),
+                JwtTokenGeneratorBuilder.Build()
             );
         }
 
@@ -33,7 +35,9 @@ namespace UseCases.Test.User.Register
             var result = await useCase.Execute(request);
 
             result.Should().NotBeNull();
+            result.Tokens.Should().NotBeNull();
             result.Name.Should().Be(request.Name);
+            result.Tokens.AccessToken.Should().NotBeNullOrEmpty().And.NotBeNullOrWhiteSpace();
 
         }
 
