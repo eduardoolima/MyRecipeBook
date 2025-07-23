@@ -1,12 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using MyRecipeBook.Domain.Security.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyRecipeBook.Infrastructure.Security.Tokens.Access.Validator
 {

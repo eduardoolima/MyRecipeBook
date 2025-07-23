@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyRecipeBook.Application.UseCases.User.Register;
+using MyRecipeBook.Attributes;
 using MyRecipeBook.Communication.Requests;
 using MyRecipeBook.Communication.Responses;
 
 namespace MyRecipeBook.Controllers
-{
+{    
     public class UserController : MyRecipeBookBaseController
     {
         [HttpPost]

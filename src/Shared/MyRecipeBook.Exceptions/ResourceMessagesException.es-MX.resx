@@ -132,10 +132,16 @@
   <data name="Name_Empty" xml:space="preserve">
     <value>lo nombre non puede ser vaziito, ai ai ai papi pendejo, cabron</value>
   </data>
+  <data name="No_Token" xml:space="preserve">
+    <value>Non hai un tokentito validito ai ai ai</value>
+  </data>
   <data name="ShortPassword" xml:space="preserve">
     <value>La contraseñita debe tener al menozitos 6 caracteresitos cabron, ai ai ai</value>
   </data>
   <data name="Unknown_Error" xml:space="preserve">
     <value>Errito desconhecidito ai ai ai caramba pendejo</value>
+  </data>
+  <data name="User_Without_Permission_Access" xml:space="preserve">
+    <value>Usuariozito sem permissaozita ai ai ai</value>
   </data>
 </root>

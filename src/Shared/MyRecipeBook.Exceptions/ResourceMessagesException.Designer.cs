@@ -106,6 +106,15 @@ namespace MyRecipeBook.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a There is no valid Token.
+        /// </summary>
+        public static string No_Token {
+            get {
+                return ResourceManager.GetString("No_Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The password must be at least 6 characters long.
         /// </summary>
         public static string ShortPassword {
@@ -120,6 +129,15 @@ namespace MyRecipeBook.Exceptions {
         public static string Unknown_Error {
             get {
                 return ResourceManager.GetString("Unknown_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a User without Permission to access this resource.
+        /// </summary>
+        public static string User_Without_Permission_Access {
+            get {
+                return ResourceManager.GetString("User_Without_Permission_Access", resourceCulture);
             }
         }
     }
