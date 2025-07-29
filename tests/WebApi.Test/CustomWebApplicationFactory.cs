@@ -47,6 +47,10 @@ namespace WebApi.Test
         {
             return _user.Name;
         }
+        public Guid GetUserId()
+        {
+            return _user.UserId;
+        }
         void StartDatabase(MyRecipeBookDbContext dbContext)
         {
             (_user, _password) = UserBuilder.Build();

@@ -31,7 +31,7 @@ namespace MyRecipeBook.Infrastructure.DataAccess.Repositories
 
         public async Task<bool> ExistActiveUserWithIdentifier(Guid userIdentifier)
         {
-            return await _dbContext.Users.AnyAsync(u => u.Id.Equals(userIdentifier) && u.Active);
+            return await _dbContext.Users.AnyAsync(u => u.UserId.Equals(userIdentifier) && u.Active);
         }
 
         public async Task<User?> GetByUserIdentifier(Guid userId)

@@ -25,7 +25,7 @@ namespace MyRecipeBook.Filters
             try
             {
                 string token = TokenOnRequest(context);
-                var userIdentifier = _acessTokenValidator.ValidateAndGetUserIdentifier(token);
+                var userIdentifier = _acessTokenValidator.ValidateAndGetUserIdentifier(token);                
                 if (!await _repository.ExistActiveUserWithIdentifier(userIdentifier))
                 {
                     throw new MyRecipeBookException(ResourceMessagesException.User_Without_Permission_Access);
