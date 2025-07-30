@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyRecipeBook.Infrastructure.DataAccess.Repositories
 {
-    public class UserRepository : IUserWriteOnlyRepository, IUserReadOnlyRepository
+    public class UserRepository : IUserWriteOnlyRepository, IUserReadOnlyRepository, IUserUpdateOnlyRepository, IUserDeleteOnlyRepository
     {
         private readonly MyRecipeBookDbContext _dbContext;
 
@@ -32,18 +32,32 @@ namespace MyRecipeBook.Infrastructure.DataAccess.Repositories
         public async Task<bool> ExistActiveUserWithIdentifier(Guid userIdentifier)
         {
             return await _dbContext.Users.AnyAsync(u => u.UserId.Equals(userIdentifier) && u.Active);
-        }
+        }        
 
         public async Task<User?> GetByUserIdentifier(Guid userId)
         {
             return await _dbContext.Users.AsNoTracking()
-                .FirstAsync(u => u.Id.Equals(userId) && u.Active);
+                .FirstAsync(u => u.UserId.Equals(userId) && u.Active);
         }
 
         public async Task<User?> GetByEmainAndPassword(string email, string password)
         {
             return await _dbContext.Users.AsNoTracking()
                 .FirstOrDefaultAsync(u => u.Email.Equals(email) && u.Password.Equals(password) && u.Active);
+        }
+
+        public async Task<User> GetById(long id)
+        {
+            return await _dbContext
+                .Users
+                .FirstAsync(user => user.Id == id);
+        }
+
+        public void Update(User user) => _dbContext.Users.Update(user);
+
+        public Task DeleteAccount(Guid userIdentifier)
+        {
+            throw new NotImplementedException();
         }
     }
 }
