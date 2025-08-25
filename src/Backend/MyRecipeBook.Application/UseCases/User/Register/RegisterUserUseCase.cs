@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using MyRecipeBook.Application.Services.Cryptography;
 using MyRecipeBook.Communication.Requests;
 using MyRecipeBook.Communication.Responses;
 using MyRecipeBook.Domain.Repositories;
 using MyRecipeBook.Domain.Repositories.User;
+using MyRecipeBook.Domain.Security.Cryptography;
 using MyRecipeBook.Domain.Security.Tokens;
 using MyRecipeBook.Exceptions;
 using MyRecipeBook.Exceptions.ExceptionsBase;
@@ -17,7 +17,7 @@ namespace MyRecipeBook.Application.UseCases.User.Register
         readonly IUserReadOnlyRepository _readOnlyRepository;
         readonly IUnitOfWork _unitOfWork;
         readonly IMapper _mapper;
-        readonly PasswordEncripter _passwordEncripter;
+        readonly IPasswordEncripter _passwordEncripter;
         readonly IAccessTokenGenerator _accessTokenGenerator;
 
         public RegisterUserUseCase
@@ -26,7 +26,7 @@ namespace MyRecipeBook.Application.UseCases.User.Register
             IUserReadOnlyRepository readOnlyRepository,
             IUnitOfWork unitOfWork,
             IMapper mapper,
-            PasswordEncripter passwordEncripter,
+            IPasswordEncripter passwordEncripter,
             IAccessTokenGenerator accessTokenGenerator
         )
         {

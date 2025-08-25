@@ -1,6 +1,5 @@
 ﻿using Bogus;
 using CommomTestUtilities.Cryptography;
-using MyRecipeBook.Application.Services.Cryptography;
 using MyRecipeBook.Domain.Entities;
 
 namespace CommomTestUtilities.Entities

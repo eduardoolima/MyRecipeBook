@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyRecipeBook.Application.Services.AutoMapper;
-using MyRecipeBook.Application.Services.Cryptography;
 using MyRecipeBook.Application.UseCases.Login.DoLogin;
 using MyRecipeBook.Application.UseCases.User.Profile;
 using MyRecipeBook.Application.UseCases.User.Register;
@@ -16,7 +15,6 @@ namespace MyRecipeBook.Application
         {
             AddAutoMapper(services);
             AddUseCases(services);
-            AddPasswordEncrypter(services, configuration);
         }
         static void AddAutoMapper(IServiceCollection services)
         {
@@ -33,11 +31,6 @@ namespace MyRecipeBook.Application
             services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
             services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
         }
-
-        static void AddPasswordEncrypter(IServiceCollection services, IConfiguration configuration)
-        {
-            var addtionalKey = configuration.GetValue<string>("Settings:Password:AdditionalKey");
-            services.AddScoped(option => new PasswordEncripter(addtionalKey!));
-        }
+        
     }
 }

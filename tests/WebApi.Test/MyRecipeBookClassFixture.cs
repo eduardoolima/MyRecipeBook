@@ -1,13 +1,5 @@
-﻿using Azure.Core;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebApi.Test
 {
@@ -27,6 +19,13 @@ namespace WebApi.Test
             ChangeRequestCulture(culture);
             AuthorizeRequest(token);
             return await _httpClient.GetAsync(method);
+        }
+
+        protected async Task<HttpResponseMessage> DoPut(string method, object request, string token, string culture = "pt-BR")
+        {
+            ChangeRequestCulture(culture);
+            AuthorizeRequest(token);
+            return await _httpClient.PutAsJsonAsync(method, request);
         }
 
         void ChangeRequestCulture(string culture) 
