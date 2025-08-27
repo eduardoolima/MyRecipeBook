@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EmailAlreadyRegistered" xml:space="preserve">
-    <value>Emailito já registradito ai ai ai</value>
-  </data>
   <data name="Email_Empty" xml:space="preserve">
     <value>Lo enderecito de emailito non puede ser vaziito pendejo!</value>
   </data>
@@ -129,11 +126,17 @@
   <data name="Email_or_Password_Invalid" xml:space="preserve">
     <value>Lo emalito o la senhazita é invalitita ai ai ai</value>
   </data>
+  <data name="EmptyPassword" xml:space="preserve">
+    <value>La Senhita está vaziita ai ai ai</value>
+  </data>
   <data name="Name_Empty" xml:space="preserve">
     <value>lo nombre non puede ser vaziito, ai ai ai papi pendejo, cabron</value>
   </data>
   <data name="No_Token" xml:space="preserve">
     <value>Non hai un tokentito validito ai ai ai</value>
+  </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>la senhita está incoretita, ai ai ai</value>
   </data>
   <data name="ShortPassword" xml:space="preserve">
     <value>La contraseñita debe tener al menozitos 6 caracteresitos cabron, ai ai ai</value>
@@ -143,5 +146,11 @@
   </data>
   <data name="User_Without_Permission_Access" xml:space="preserve">
     <value>Usuariozito sem permissaozita ai ai ai</value>
+  </data>
+  <data name="EmailAlreadyRegistered" xml:space="preserve">
+    <value>Emailito já registradito ai ai ai</value>
+  </data>
+  <data name="Password_Invalid" xml:space="preserve">
+    <value>Senhita invalidita ai ai ai</value>
   </data>
 </root>

@@ -97,6 +97,15 @@ namespace MyRecipeBook.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Empty Password.
+        /// </summary>
+        public static string EmptyPassword {
+            get {
+                return ResourceManager.GetString("EmptyPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The name cannot be empty.
         /// </summary>
         public static string Name_Empty {
@@ -111,6 +120,24 @@ namespace MyRecipeBook.Exceptions {
         public static string No_Token {
             get {
                 return ResourceManager.GetString("No_Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Current Password Incorrect.
+        /// </summary>
+        public static string PASSWORD_DIFFERENT_CURRENT_PASSWORD {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFFERENT_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a invalid Password.
+        /// </summary>
+        public static string Password_Invalid {
+            get {
+                return ResourceManager.GetString("Password_Invalid", resourceCulture);
             }
         }
         

@@ -1,5 +1,6 @@
 ﻿using CommomTestUtilities.Requests;
 using FluentAssertions;
+using MyRecipeBook.Application.UseCases.User.ChangePassword;
 using MyRecipeBook.Application.UseCases.User.Register;
 using MyRecipeBook.Exceptions;
 
@@ -74,6 +75,22 @@ namespace Validator.Test.User.Register
 
             result.IsValid.Should().BeFalse();
             result.Errors.Should().ContainSingle().And.Contain(error => error.ErrorMessage == ResourceMessagesException.ShortPassword);
+        }
+
+        [Fact]
+        public void Error_Password_Empty()
+        {
+            var validator = new ChangePasswordValidator();
+
+            var request = RequestChangePasswordJsonBuilder.Build();
+            request.NewPassword = string.Empty;
+
+            var result = validator.Validate(request);
+
+            result.IsValid.Should().BeFalse();
+
+            result.Errors.Should().ContainSingle()
+                .And.Contain(e => e.ErrorMessage.Equals(ResourceMessagesException.EmptyPassword));
         }
     }
 }
